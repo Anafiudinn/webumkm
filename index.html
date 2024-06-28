@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Welcome - UMKM Es Teh</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .welcome-text {
+            font-size: 3rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .welcome-subtext {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        .btn-custom {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="welcome-text animate__animated animate__fadeInDown">
+            WELCOME
+        </div>
+        <div class="welcome-subtext animate__animated animate__fadeInUp">
+            Selamat Menggunakan
+        </div>
+        <a href="login.php" class="btn btn-primary btn-custom animate__animated animate__zoomIn"
+            id="get-started-btn">Mulai</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('get-started-btn').addEventListener('click', function (event) {
+            event.preventDefault();
+            var button = this;
+            button.classList.remove('animate__zoomIn');
+            button.classList.add('animate__zoomOut');
+            setTimeout(function () {
+                window.location.href = button.href;
+            }, 1000); // Animation time in milliseconds
+
+            // Smooth scroll to login page
+            var targetElement = document.querySelector(button.getAttribute('href'));
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
